@@ -16,5 +16,7 @@ export async function getImagesByQuery(query, page = 1) {
     },
   };
 
-  return axios.get(BASE_URL, searchParams).then(response => response.data);
+  const response = await axios.get(BASE_URL, searchParams);
+
+  return response.data;
 }
